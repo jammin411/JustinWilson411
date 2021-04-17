@@ -1,0 +1,16 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+img.logo {
+  max-height: 100px;
+  float: left;
+  margin: 10px 0 0 0;
+  padding: 0 25px 0 0 ;
+}
