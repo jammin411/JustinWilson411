@@ -37,7 +37,6 @@ export default function Overview() {
     const getData = async () => {        
         const response = await axios.get('http://localhost:5000/Experience');
 
-        console.log(response.data);
         setData(response.data);
     };
 
