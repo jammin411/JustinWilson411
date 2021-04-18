@@ -9,7 +9,7 @@ function TagLines() {
     }, []);
 
     const getPersonalData = async () => {        
-        const response = await axios.get('http://localhost:5000/Personal')
+        const response = await axios.get('http://localhost:5000/Personal');
 
         setPersonalData(response.data[0]);
     };
