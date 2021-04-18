@@ -37,7 +37,7 @@ export default function Overview() {
             <Grid container spacing={3}>        
                 <Grid item xs={6}>
                 <Paper className={classes.paper}>
-                    <Typography color='primary' variant='h1' className={classes.title}>
+                    <Typography color='primary' variant='h2' className={classes.title}>
                         About Me
                     </Typography>
                     <br/>

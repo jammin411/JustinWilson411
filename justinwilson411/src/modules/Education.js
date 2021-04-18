@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography'
 import axios from 'axios';
+import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -23,6 +24,11 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         textAlign: 'left !important'
     },
+    paper: {
+        padding: theme.spacing(2),
+        textAlign: 'center',
+        color: theme.palette.text.secondary
+    },
 }));
 
 export default function Overview() {
@@ -35,7 +41,7 @@ export default function Overview() {
     }, []);
 
     const getData = async () => {        
-        const response = await axios.get('http://localhost:5000/Experience');
+        const response = await axios.get('http://localhost:5000/Education');
 
         console.log(response.data);
         setData(response.data);
@@ -53,34 +59,34 @@ export default function Overview() {
             <Grid container spacing={3}>        
                 <Grid item xs={12}>
                     <Typography color='primary' variant='h2' className={classes.title}>
-                        My Experience
+                        Education
                     </Typography>   
                     <Typography color='primary' variant='subtitle1' className={classes.title}>
-                        Background and Expertise
+                        My Studies
                     </Typography>
-                    {
-                        data.map((item) => {
-                            return (
-                                <div>
-                                    <Typography color='primary' variant='h5' className={classes.content}>
-                                        {item.Title} - {item.Company}
+                </Grid>                
+                {
+                    data.map((item) => {
+                        return (
+                            <Grid item xs={6}>
+                                <Paper className={classes.paper}>
+                                    <Typography color='primary' variant='h5' className={classes.title}>
+                                        {item.School}
                                     </Typography>
-                                    <Typography color='primary' variant='h6' className={classes.content}>
+                                    <Typography color='primary' variant='subtitle1' className={classes.title}>
+                                        {item.Degree}
+                                    </Typography>
+                                    <Typography color='primary' variant='subtitle1' className={classes.title}>
                                         {item.FromDate} - {item.ToDate}
+                                    </Typography>                                
+                                    <Typography color='primary' variant='subtitle1' className={classes.title}>
+                                        {item.Description}                                  
                                     </Typography>
-                                    <Typography color='primary' variant='subtitle1' className={classes.content}>
-                                        <ul>
-                                            {
-                                            item.DescriptionBullets.hasOwnProperty('Bullets') ? 
-                                            item.DescriptionBullets.Bullets.map((item)=> {return (<li>{item}</li>)}) 
-                                            : <li>{item.DescriptionBullets.Description}</li>}  
-                                        </ul>                                  
-                                    </Typography>
-                                </div>                            
-                            )
-                        })
-                    }
-                </Grid>
+                                </Paper>
+                            </Grid>                           
+                        )
+                    })
+                }
             </Grid>
         </div>
     );
