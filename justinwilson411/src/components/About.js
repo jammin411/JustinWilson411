@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography'
-import AboutImage from '../modules/AboutImage';
+import AboutImage from './AboutImage';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -13,8 +13,15 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         padding: theme.spacing(2),
         textAlign: 'left',
+        color: theme.palette.text.secondary        
+    },
+    paperBorderless: {
+        textAlign: 'left',
         color: theme.palette.text.secondary,
-        height: 'auto'
+        height: '760px',
+        overflow: 'hidden',
+        borderStyle: 'none',
+        boxShadow: 'none !important'
     },
     title: {
         flexGrow: 1,
@@ -23,9 +30,6 @@ const useStyles = makeStyles((theme) => ({
     content: {
         flexGrow: 1,
         textAlign: 'left !important'
-    },
-    image: {
-        height: '100%'
     }
 }));
 
@@ -61,13 +65,14 @@ export default function Overview() {
                         I actively utilize technologies ranging from Cloud to Storage to Software across many industries, including Healthcare, Agriculture, and Education. 
                         Additionally, I hold several certifications from Microsoft and AWS and am actively working to obtain Google Cloud Professional Certifications.<br /><br />​
 
-                        I'm always looking to grow my personal and professional network. Feel free to connect via LinkedIn or contact me directly at 
-                        <a href='mailto:Justin@Jammin411.com' title='Justin@Jammin411.com'>Justin@Jammin411.com</a>
+                        I'm always looking to grow my personal and professional network. Feel free to connect via LinkedIn or contact me directly at <a href='mailto:Justin@Jammin411.com' title='Justin@Jammin411.com'>Justin@Jammin411.com</a>
                     </Typography>       
                 </Paper>                             
             </Grid>
             <Grid item xs={6}>
-                <AboutImage className={classes.image} /> 
+                <Paper className={classes.paperBorderless}>
+                    <AboutImage /> 
+                </Paper>
             </Grid>
         </Grid>
     </div>

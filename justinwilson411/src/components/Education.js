@@ -10,12 +10,6 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         margin: '20px 10px 0 10px'
     },
-    paper: {
-        padding: theme.spacing(2),
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
-        height: '670px'
-    },
     title: {
         flexGrow: 1,
         textAlign: 'center !important'

@@ -19,3 +19,10 @@ img.jw411-logo {
 img.jw411-large-image {
   max-width: 100%;
 }
+
+img.jw411-image-fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}

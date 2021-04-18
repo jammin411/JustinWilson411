@@ -1,7 +1,6 @@
 import './css/App.css';
-import './modules/Header';
-import Header from './modules/Header';
-import Body from './modules/Body'
+import Header from './components/Header';
+import Body from './components/Body'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({

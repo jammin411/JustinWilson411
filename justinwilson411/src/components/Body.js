@@ -1,8 +1,8 @@
 import React from 'react';
-import Overview from '../modules/Overview'
-import About from '../modules/About'
-import Experience from '../modules/Experience'
-import Education from '../modules/Education'
+import Overview from './Overview'
+import About from './About'
+import Experience from './Experience'
+import Education from './Education'
 
 const Body = () => {
     return (

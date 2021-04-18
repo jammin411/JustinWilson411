@@ -4,7 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography'
 import axios from 'axios';
-import OverviewImage from '../modules/OverviewImage';
+import OverviewImage from './OverviewImage';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -15,10 +15,17 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(2),
         textAlign: 'center',
         color: theme.palette.text.secondary,
-        height: '670px'
+        height: '670px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignContent: 'center',
+        flexDirection: 'column'
     },
-    title: {
-        flexGrow: 1,
+    verticalAlign: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignContent: 'center',
+        flexDirection: 'column'
     }
 }));
 
@@ -41,18 +48,20 @@ export default function Overview() {
     <div className={classes.root}>
         <Grid container spacing={3}>        
             <Grid item xs={6}>
-                <OverviewImage />          
+                <Paper className={classes.paper}>
+                    <OverviewImage />          
+                </Paper>
             </Grid>
             <Grid item xs={6}>
                 <Paper className={classes.paper}>
-                <Typography color='primary' variant='h1' className={classes.title}>
-                    {personalData.FirstName} <br/>
-                    {personalData.LastName}
-                </Typography>
-                <br/>
-                <Typography color='secondary' variant='h5' className={classes.title}>
-                    {personalData.Credentials}
-                </Typography>       
+                    <Typography color='primary' variant='h1'>
+                        {personalData.FirstName} <br/>
+                        {personalData.LastName}
+                    </Typography>
+                    <br/>
+                    <Typography color='secondary' variant='h5'>
+                        {personalData.Credentials}
+                    </Typography>       
                 </Paper>
             </Grid>
         </Grid>
