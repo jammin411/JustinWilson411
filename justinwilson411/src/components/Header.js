@@ -14,10 +14,15 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    color: '#212121'
   },
   title: {
     flexGrow: 1,
+    color: '#212121'
   },
+  appBar: {
+    backgroundColor: '#ffffff'
+  }
 }));
 
 const Header = () => {
@@ -25,7 +30,7 @@ const Header = () => {
 
     return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />

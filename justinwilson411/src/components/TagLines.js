@@ -1,5 +1,7 @@
+import { Typography } from '@material-ui/core';
 import axios from 'axios';
 import React, {useState, useEffect } from 'react';
+import ReactRotatingText from 'react-rotating-text';
 
 function TagLines() {
     const [personalData, setPersonalData] = useState({});
@@ -15,12 +17,12 @@ function TagLines() {
     };
 
     return (  
-        <div>
-            {personalData.FirstName} {personalData.LastName}<br/>
-            {personalData.TagLine1} <br/>
-            {personalData.TagLine2} <br/>
-            {personalData.TagLine3}
-        </div>
+        <div>            
+            <Typography variant='h6'>
+                {personalData.FirstName} {personalData.LastName}<br />
+                <ReactRotatingText color='#0d47a1' cursor={false} pause={1000} emptyPause={500} items={[personalData.TagLine1, personalData.TagLine2, personalData.TagLine3]} />            
+            </Typography>            
+        </div>   
     )
 }
 
