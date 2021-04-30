@@ -1,33 +1,20 @@
 import './css/App.css';
-import Header from './components/Header';
-import Body from './components/Body'
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import React from 'react';
+import { Router } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import Routes from './Routes';
+import 'react-lazy-load-image-component/src/effects/opacity.css';
+import 'leaflet/dist/leaflet.css';
+import './assets/css/index.css';
+import 'aos/dist/aos.css';
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      light: '#9fa8da',
-      main: '#3f51b5',
-      dark: '#1a237e',
-      contrastText: '#fff',
-    },
-    secondary: {
-      light: '#536dfe',
-      main: '#424242',
-      dark: '#304ffe',
-      contrastText: '#fff',
-    },
-  },
-});
+const browserHistory = createBrowserHistory();
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <ThemeProvider theme={theme}>
-        <Header />
-        <Body />
-      </ThemeProvider>      
-    </div>
+    <Router basename={process.env.PUBLIC_URL} history={browserHistory}>
+      <Routes />
+    </Router>    
   );
 }
 
